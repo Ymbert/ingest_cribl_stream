@@ -12,10 +12,10 @@ c.setopt(c.WRITEDATA, buffer)
 
 c.perform()
 
-headers = ['Content-Type: application/json', 'Authorization: Splunk 39444963-6f62-756a-7551-534c4d654177']
+headers = ['Content-Type: application/json', 'Authorization: Splunk 79547730-3474-616e-3577-54316d66714b']
 data = json.loads(buffer.getvalue().decode('utf-8'))["entries"]
 
-c.setopt(c.URL, 'https://default.main.confident-gilbert-b0v5dbx.cribl.cloud:8088/services/collector')
+c.setopt(c.URL, 'https://[ingress-address]:[port]/services/collector')
 c.setopt(c.HTTPHEADER, headers)
 
 for entry in data:
